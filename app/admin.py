@@ -15,7 +15,7 @@ class ReviewAdmin(admin.ModelAdmin):
     form = ReviewAdminForm
     list_display = ('car', 'title')
     list_filter = ('car', 'title')
-    ordering = ('-__car.id',)
+    ordering = ('car__id',)
 
 
 admin.site.register(Car, CarAdmin)
