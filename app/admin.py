@@ -8,14 +8,14 @@ class CarAdmin(admin.ModelAdmin):
     list_display = ('brand', 'model', 'review_count')
     list_filter = ('brand', 'model')
     search_fields = ('brand', 'model')
-    #ordering = ('-id')
+    ordering = ('-id',)
 
 
 class ReviewAdmin(admin.ModelAdmin):
     form = ReviewAdminForm
     list_display = ('car', 'title')
     list_filter = ('car', 'title')
-    #ordering = ('-__car.id')
+    ordering = ('-__car.id',)
 
 
 admin.site.register(Car, CarAdmin)
